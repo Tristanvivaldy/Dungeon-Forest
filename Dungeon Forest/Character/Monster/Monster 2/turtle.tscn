@@ -1,0 +1,178 @@
+[gd_scene load_steps=32 format=2]
+
+[ext_resource path="res://Character/Monster/Assets/Monster 2/Battle_turtle_idle.png" type="Texture" id=1]
+[ext_resource path="res://Character/Monster/Assets/Monster 2/Battle_turtle_hurt.png" type="Texture" id=2]
+[ext_resource path="res://Character/Monster/Assets/Monster 2/Battle_turtle_death.png" type="Texture" id=3]
+[ext_resource path="res://Character/Monster/Assets/Monster 2/Battle_turtle_sneer.png" type="Texture" id=4]
+[ext_resource path="res://Character/Stats.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Character/Hitbox and Hurtboxes/Hurtbox.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Character/Hitbox and Hurtboxes/Hitbox.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Character/Monster/Detection/PlayerDetect.tscn" type="PackedScene" id=8]
+[ext_resource path="res://GUI/Monster_hit/Damage.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Character/Monster/Monster 2/turtle.gd" type="Script" id=10]
+
+[sub_resource type="AtlasTexture" id=1]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 72, 72 )
+
+[sub_resource type="AtlasTexture" id=2]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 72, 0, 72, 72 )
+
+[sub_resource type="AtlasTexture" id=3]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 144, 0, 72, 72 )
+
+[sub_resource type="AtlasTexture" id=4]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 216, 0, 72, 72 )
+
+[sub_resource type="AtlasTexture" id=5]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 288, 0, 72, 72 )
+
+[sub_resource type="AtlasTexture" id=6]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 360, 0, 72, 72 )
+
+[sub_resource type="AtlasTexture" id=7]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 72, 72 )
+
+[sub_resource type="AtlasTexture" id=8]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 72, 0, 72, 72 )
+
+[sub_resource type="AtlasTexture" id=9]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 144, 0, 72, 72 )
+
+[sub_resource type="AtlasTexture" id=10]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 216, 0, 72, 72 )
+
+[sub_resource type="AtlasTexture" id=11]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 72, 72 )
+
+[sub_resource type="AtlasTexture" id=12]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 72, 0, 72, 72 )
+
+[sub_resource type="AtlasTexture" id=13]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 144, 0, 72, 72 )
+
+[sub_resource type="AtlasTexture" id=14]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 216, 0, 72, 72 )
+
+[sub_resource type="AtlasTexture" id=15]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 72, 72 )
+
+[sub_resource type="AtlasTexture" id=16]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 72, 0, 72, 72 )
+
+[sub_resource type="SpriteFrames" id=17]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ) ],
+"loop": true,
+"name": "att",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ) ],
+"loop": true,
+"name": "death",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 15 ), SubResource( 16 ) ],
+"loop": true,
+"name": "hurt",
+"speed": 5.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=18]
+radius = 26.0
+height = 0.0
+
+[sub_resource type="CircleShape2D" id=19]
+radius = 22.0907
+
+[sub_resource type="CircleShape2D" id=20]
+radius = 93.3435
+
+[sub_resource type="CircleShape2D" id=21]
+radius = 31.0644
+
+[node name="turtle" type="KinematicBody2D"]
+collision_layer = 8
+script = ExtResource( 10 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 17 )
+animation = "death"
+frame = 3
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 22 )
+shape = SubResource( 18 )
+
+[node name="Hurtbox" parent="." instance=ExtResource( 6 )]
+
+[node name="CollisionShape2D" parent="Hurtbox" index="0"]
+position = Vector2( 0, 22 )
+shape = SubResource( 19 )
+
+[node name="Stats" parent="." instance=ExtResource( 5 )]
+max_health_monster = 100
+
+[node name="PlayerDetect" parent="." instance=ExtResource( 8 )]
+position = Vector2( 0, 1 )
+
+[node name="CollisionShape2D" parent="PlayerDetect" index="0"]
+position = Vector2( 0, 21 )
+shape = SubResource( 20 )
+
+[node name="Hitbox" parent="." instance=ExtResource( 7 )]
+position = Vector2( 0, 1 )
+collision_layer = 0
+collision_mask = 64
+damage = 35
+
+[node name="CollisionShape2D" parent="Hitbox" index="0"]
+position = Vector2( 0, 21 )
+shape = SubResource( 21 )
+
+[node name="Damage" parent="." instance=ExtResource( 9 )]
+
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
+[connection signal="no_health" from="Stats" to="." method="_on_Stats_no_health"]
+
+[editable path="Hurtbox"]
+[editable path="PlayerDetect"]
+[editable path="Hitbox"]
+[editable path="Damage"]

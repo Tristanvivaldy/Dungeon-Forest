@@ -1,0 +1,149 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Assets/Picture/Chest.png" type="Texture" id=1]
+[ext_resource path="res://Character/Obstacle/Chest.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Picture/Icons_09.png" type="Texture" id=3]
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 40.0125
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 16, 15.5 )
+
+[sub_resource type="Animation" id=3]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 24 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 16 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprite2:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Sprite2:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0.5, 0.5 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "open"
+length = 1.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 25, 26, 27, 28, 29 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3, 0.4, 0.5, 0.6, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 16 ), Vector2( 0, 10 ), Vector2( 0, 5 ), Vector2( 0, 3 ), Vector2( 0, 0 ), Vector2( 0, -5 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprite2:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = false
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.2, 1.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Sprite2:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.2, 0.4, 0.6, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.5, 0.5 ), Vector2( 0.75, 0.75 ), Vector2( 0.85, 0.85 ), Vector2( 1, 1 ) ]
+}
+
+[node name="Chest" type="StaticBody2D"]
+collision_layer = 64
+script = ExtResource( 2 )
+
+[node name="ChestZone" type="Area2D" parent="."]
+collision_layer = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ChestZone"]
+position = Vector2( 0, 23 )
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 2.5, 2.5 )
+texture = ExtResource( 1 )
+hframes = 24
+vframes = 2
+frame = 24
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 22.5 )
+shape = SubResource( 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 3 )
+anims/open = SubResource( 4 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+visible = false
+position = Vector2( 0, 16 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 3 )
+
+[connection signal="body_entered" from="ChestZone" to="." method="_on_ChestZone_body_entered"]
+[connection signal="body_exited" from="ChestZone" to="." method="_on_ChestZone_body_exited"]

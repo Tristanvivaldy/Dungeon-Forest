@@ -1,0 +1,259 @@
+[gd_scene load_steps=47 format=2]
+
+[ext_resource path="res://Character/Monster/Assets/Monster 4/Dead.png" type="Texture" id=1]
+[ext_resource path="res://Character/Monster/Assets/Monster 4/Idle.png" type="Texture" id=2]
+[ext_resource path="res://Character/Monster/Assets/Monster 4/Walk.png" type="Texture" id=3]
+[ext_resource path="res://Character/Monster/Assets/Monster 4/Attack 1.png" type="Texture" id=4]
+[ext_resource path="res://Character/Monster/Assets/Monster 4/Attack 2.png" type="Texture" id=5]
+[ext_resource path="res://Character/Monster/Assets/Monster 4/Hurt.png" type="Texture" id=6]
+[ext_resource path="res://Character/Hitbox and Hurtboxes/Hitbox.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Character/Hitbox and Hurtboxes/Hurtbox.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Character/Stats.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Character/Monster/Detection/PlayerDetect.tscn" type="PackedScene" id=10]
+[ext_resource path="res://GUI/Monster_hit/Damage.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Character/Monster/Monster 4/armor.gd" type="Script" id=12]
+
+[sub_resource type="AtlasTexture" id=1]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 2, 5, 85, 81 )
+
+[sub_resource type="AtlasTexture" id=2]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 87, 5, 85, 81 )
+
+[sub_resource type="AtlasTexture" id=3]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 172, 5, 85, 81 )
+
+[sub_resource type="AtlasTexture" id=4]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 257, 5, 85, 81 )
+
+[sub_resource type="AtlasTexture" id=5]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 342, 5, 85, 81 )
+
+[sub_resource type="AtlasTexture" id=6]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 0, 0, 107, 86 )
+
+[sub_resource type="AtlasTexture" id=7]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 107, 0, 107, 86 )
+
+[sub_resource type="AtlasTexture" id=8]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 214, 0, 107, 86 )
+
+[sub_resource type="AtlasTexture" id=9]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 321, 0, 107, 86 )
+
+[sub_resource type="AtlasTexture" id=10]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 80, 86 )
+
+[sub_resource type="AtlasTexture" id=11]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 80, 0, 80, 86 )
+
+[sub_resource type="AtlasTexture" id=12]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 160, 0, 80, 86 )
+
+[sub_resource type="AtlasTexture" id=13]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 240, 0, 80, 86 )
+
+[sub_resource type="AtlasTexture" id=14]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 320, 0, 80, 86 )
+
+[sub_resource type="AtlasTexture" id=15]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 400, 0, 80, 86 )
+
+[sub_resource type="AtlasTexture" id=16]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 0, 0, 70, 86 )
+
+[sub_resource type="AtlasTexture" id=17]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 70, 0, 70, 86 )
+
+[sub_resource type="AtlasTexture" id=18]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 12, 17, 67, 67 )
+
+[sub_resource type="AtlasTexture" id=19]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 79, 17, 67, 67 )
+
+[sub_resource type="AtlasTexture" id=20]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 146, 17, 67, 67 )
+
+[sub_resource type="AtlasTexture" id=21]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 213, 17, 67, 67 )
+
+[sub_resource type="AtlasTexture" id=22]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 21, 13, 69, 73 )
+
+[sub_resource type="AtlasTexture" id=23]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 90, 13, 69, 73 )
+
+[sub_resource type="AtlasTexture" id=24]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 159, 13, 69, 73 )
+
+[sub_resource type="AtlasTexture" id=25]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 228, 13, 69, 73 )
+
+[sub_resource type="AtlasTexture" id=26]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 297, 13, 69, 73 )
+
+[sub_resource type="AtlasTexture" id=27]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 366, 13, 69, 73 )
+
+[sub_resource type="AtlasTexture" id=28]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 435, 13, 69, 73 )
+
+[sub_resource type="AtlasTexture" id=29]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 504, 13, 69, 73 )
+
+[sub_resource type="SpriteFrames" id=30]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ) ],
+"loop": true,
+"name": "attack1",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ) ],
+"loop": true,
+"name": "attack2",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ) ],
+"loop": true,
+"name": "dead",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 16 ), SubResource( 17 ) ],
+"loop": true,
+"name": "get-hit",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ) ],
+"loop": true,
+"name": "walk",
+"speed": 5.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=31]
+radius = 18.75
+height = 32.0
+
+[sub_resource type="CapsuleShape2D" id=32]
+radius = 21.25
+height = 24.0
+
+[sub_resource type="CircleShape2D" id=33]
+radius = 161.012
+
+[sub_resource type="CapsuleShape2D" id=34]
+radius = 48.75
+
+[node name="armor" type="KinematicBody2D"]
+scale = Vector2( 0.8, 0.8 )
+z_index = 1
+script = ExtResource( 12 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 30 )
+animation = "idle"
+frame = 3
+playing = true
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="."]
+position = Vector2( -1.25, 3.75 )
+shape = SubResource( 31 )
+
+[node name="Hurtbox" parent="." instance=ExtResource( 8 )]
+
+[node name="CollisionShape2D" parent="Hurtbox" index="0"]
+position = Vector2( -2.5, 3.75 )
+shape = SubResource( 32 )
+
+[node name="Stats" parent="." instance=ExtResource( 9 )]
+max_health_monster = 250
+
+[node name="PlayerDetect" parent="." instance=ExtResource( 10 )]
+
+[node name="CollisionShape2D" parent="PlayerDetect" index="0"]
+position = Vector2( 0, 14 )
+shape = SubResource( 33 )
+
+[node name="Hitbox" parent="." instance=ExtResource( 7 )]
+collision_layer = 0
+collision_mask = 64
+damage = 50
+
+[node name="CollisionShape2D" parent="Hitbox" index="0"]
+position = Vector2( -1.25, 3.75 )
+shape = SubResource( 34 )
+
+[node name="Damage" parent="." instance=ExtResource( 11 )]
+self_modulate = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
+
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
+[connection signal="no_health" from="Stats" to="." method="_on_Stats_no_health"]
+
+[editable path="Hurtbox"]
+[editable path="PlayerDetect"]
+[editable path="Hitbox"]
+[editable path="Damage"]
