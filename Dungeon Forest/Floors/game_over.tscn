@@ -1,0 +1,176 @@
+[gd_scene load_steps=47 format=2]
+
+[ext_resource path="res://Floors/game_over.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Picture/game_over/tile004.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Picture/game_over/tile005.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Picture/game_over/tile006.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Picture/game_over/tile007.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Picture/game_over/tile003.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Picture/game_over/tile002.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Picture/game_over/tile001.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Picture/game_over/tile008.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Picture/game_over/tile000.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Picture/game_over/tile033.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Picture/game_over/tile013.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Picture/game_over/tile012.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Picture/game_over/tile024.png" type="Texture" id=14]
+[ext_resource path="res://Assets/Picture/game_over/tile018.png" type="Texture" id=15]
+[ext_resource path="res://Assets/Picture/game_over/tile027.png" type="Texture" id=16]
+[ext_resource path="res://Assets/Picture/game_over/tile028.png" type="Texture" id=17]
+[ext_resource path="res://Assets/Picture/game_over/tile010.png" type="Texture" id=18]
+[ext_resource path="res://Assets/Picture/game_over/tile011.png" type="Texture" id=19]
+[ext_resource path="res://Assets/Picture/game_over/tile016.png" type="Texture" id=20]
+[ext_resource path="res://Assets/Picture/game_over/tile009.png" type="Texture" id=21]
+[ext_resource path="res://Assets/Picture/game_over/tile034.png" type="Texture" id=22]
+[ext_resource path="res://Assets/Picture/game_over/tile035.png" type="Texture" id=23]
+[ext_resource path="res://Assets/Picture/game_over/tile015.png" type="Texture" id=24]
+[ext_resource path="res://Assets/Picture/game_over/tile037.png" type="Texture" id=25]
+[ext_resource path="res://Assets/Picture/game_over/tile019.png" type="Texture" id=26]
+[ext_resource path="res://Assets/Picture/game_over/tile023.png" type="Texture" id=27]
+[ext_resource path="res://Assets/Picture/game_over/tile038.png" type="Texture" id=28]
+[ext_resource path="res://Assets/Picture/game_over/tile031.png" type="Texture" id=29]
+[ext_resource path="res://Assets/Picture/game_over/tile020.png" type="Texture" id=30]
+[ext_resource path="res://Assets/Picture/game_over/tile029.png" type="Texture" id=31]
+[ext_resource path="res://Assets/Picture/game_over/tile030.png" type="Texture" id=32]
+[ext_resource path="res://Assets/Picture/game_over/tile026.png" type="Texture" id=33]
+[ext_resource path="res://Assets/Picture/game_over/tile017.png" type="Texture" id=34]
+[ext_resource path="res://Assets/Picture/game_over/tile032.png" type="Texture" id=35]
+[ext_resource path="res://Assets/Picture/game_over/tile021.png" type="Texture" id=36]
+[ext_resource path="res://Assets/Picture/game_over/tile025.png" type="Texture" id=37]
+[ext_resource path="res://Assets/Picture/game_over/tile039.png" type="Texture" id=38]
+[ext_resource path="res://Assets/Picture/game_over/tile014.png" type="Texture" id=39]
+[ext_resource path="res://Assets/Picture/game_over/tile036.png" type="Texture" id=40]
+[ext_resource path="res://Assets/Picture/game_over/tile022.png" type="Texture" id=41]
+[ext_resource path="res://Assets/Font/diffusion-bold.ttf" type="DynamicFontData" id=42]
+
+[sub_resource type="AnimatedTexture" id=1]
+flags = 4
+frames = 40
+fps = 10.0
+frame_0/texture = ExtResource( 10 )
+frame_1/texture = ExtResource( 8 )
+frame_1/delay_sec = 0.0
+frame_2/texture = ExtResource( 7 )
+frame_2/delay_sec = 0.0
+frame_3/texture = ExtResource( 6 )
+frame_3/delay_sec = 0.0
+frame_4/texture = ExtResource( 2 )
+frame_4/delay_sec = 0.0
+frame_5/texture = ExtResource( 3 )
+frame_5/delay_sec = 0.0
+frame_6/texture = ExtResource( 4 )
+frame_6/delay_sec = 0.0
+frame_7/texture = ExtResource( 5 )
+frame_7/delay_sec = 0.0
+frame_8/texture = ExtResource( 9 )
+frame_8/delay_sec = 0.0
+frame_9/texture = ExtResource( 21 )
+frame_9/delay_sec = 0.0
+frame_10/texture = ExtResource( 18 )
+frame_10/delay_sec = 0.0
+frame_11/texture = ExtResource( 19 )
+frame_11/delay_sec = 0.0
+frame_12/texture = ExtResource( 13 )
+frame_12/delay_sec = 0.0
+frame_13/texture = ExtResource( 12 )
+frame_13/delay_sec = 0.0
+frame_14/texture = ExtResource( 39 )
+frame_14/delay_sec = 0.0
+frame_15/texture = ExtResource( 24 )
+frame_15/delay_sec = 0.0
+frame_16/texture = ExtResource( 20 )
+frame_16/delay_sec = 0.0
+frame_17/texture = ExtResource( 34 )
+frame_17/delay_sec = 0.0
+frame_18/texture = ExtResource( 15 )
+frame_18/delay_sec = 0.0
+frame_19/texture = ExtResource( 26 )
+frame_19/delay_sec = 0.0
+frame_20/texture = ExtResource( 30 )
+frame_20/delay_sec = 0.0
+frame_21/texture = ExtResource( 36 )
+frame_21/delay_sec = 0.0
+frame_22/texture = ExtResource( 41 )
+frame_22/delay_sec = 0.0
+frame_23/texture = ExtResource( 27 )
+frame_23/delay_sec = 0.0
+frame_24/texture = ExtResource( 14 )
+frame_24/delay_sec = 0.0
+frame_25/texture = ExtResource( 37 )
+frame_25/delay_sec = 0.0
+frame_26/texture = ExtResource( 33 )
+frame_26/delay_sec = 0.0
+frame_27/texture = ExtResource( 16 )
+frame_27/delay_sec = 0.0
+frame_28/texture = ExtResource( 17 )
+frame_28/delay_sec = 0.0
+frame_29/texture = ExtResource( 31 )
+frame_29/delay_sec = 0.0
+frame_30/texture = ExtResource( 32 )
+frame_30/delay_sec = 0.0
+frame_31/texture = ExtResource( 29 )
+frame_31/delay_sec = 0.0
+frame_32/texture = ExtResource( 35 )
+frame_32/delay_sec = 0.0
+frame_33/texture = ExtResource( 11 )
+frame_33/delay_sec = 0.0
+frame_34/texture = ExtResource( 22 )
+frame_34/delay_sec = 0.0
+frame_35/texture = ExtResource( 23 )
+frame_35/delay_sec = 0.0
+frame_36/texture = ExtResource( 40 )
+frame_36/delay_sec = 0.0
+frame_37/texture = ExtResource( 25 )
+frame_37/delay_sec = 0.0
+frame_38/texture = ExtResource( 28 )
+frame_38/delay_sec = 0.0
+frame_39/texture = ExtResource( 38 )
+frame_39/delay_sec = 0.0
+
+[sub_resource type="DynamicFont" id=2]
+size = 130
+font_data = ExtResource( 42 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.423529, 0.294118, 0.294118, 1 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.0666667, 0.0117647, 0.0117647, 1 )
+
+[node name="game_over" type="Control"]
+script = ExtResource( 1 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+texture = SubResource( 1 )
+expand = true
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+margin_left = 180.0
+margin_top = 140.0
+margin_right = 790.0
+margin_bottom = 276.0
+
+[node name="Label" type="Label" parent="MarginContainer"]
+margin_right = 702.0
+margin_bottom = 163.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "GAME OVER"
+
+[node name="Menu" type="Button" parent="."]
+margin_left = 270.0
+margin_top = 345.0
+margin_right = 417.0
+margin_bottom = 376.0
+rect_scale = Vector2( 3.56691, 3.56691 )
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 4 )
+text = "Back To Menu"
+
+[connection signal="mouse_entered" from="Menu" to="." method="_on_Menu_mouse_entered"]
+[connection signal="pressed" from="Menu" to="." method="_on_Menu_pressed"]

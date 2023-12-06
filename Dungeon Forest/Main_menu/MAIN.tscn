@@ -1,0 +1,182 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Main_menu/asset/natur3.png" type="Texture" id=1]
+[ext_resource path="res://Main_menu/asset/natur1.png" type="Texture" id=2]
+[ext_resource path="res://Main_menu/asset/natur2.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Font/CastoroTitling-Regular.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Main_menu/ui_menu.gd" type="Script" id=5]
+[ext_resource path="res://dialogues/Textbox.tscn" type="PackedScene" id=6]
+
+[sub_resource type="AnimatedTexture" id=1]
+flags = 4
+frames = 3
+fps = 0.5
+frame_0/texture = ExtResource( 2 )
+frame_1/texture = ExtResource( 3 )
+frame_1/delay_sec = 0.0
+frame_2/texture = ExtResource( 1 )
+frame_2/delay_sec = 0.0
+
+[sub_resource type="DynamicFont" id=2]
+size = 60
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 40
+font_data = ExtResource( 4 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.305882, 0.180392, 0.152941, 0.705882 )
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.305882, 0.180392, 0.152941, 1 )
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0, 0, 0, 0.392157 )
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[node name="ui_menu" type="Node2D"]
+script = ExtResource( 5 )
+mainGameScene = ExtResource( 6 )
+
+[node name="background" type="TextureRect" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+texture = SubResource( 1 )
+expand = true
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+custom_constants/margin_top = 100
+custom_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+margin_top = 100.0
+margin_right = 1024.0
+margin_bottom = 550.0
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+margin_right = 1024.0
+margin_bottom = 222.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0.376471, 0.0392157, 0.0392157, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 0
+custom_fonts/font = SubResource( 2 )
+text = "Dungeon Forest"
+align = 1
+valign = 1
+clip_text = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+margin_top = 226.0
+margin_right = 1024.0
+margin_bottom = 450.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 20
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+margin_right = 1024.0
+margin_bottom = 41.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 150
+custom_constants/margin_left = 150
+
+[node name="start_new_game" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer"]
+margin_left = 150.0
+margin_right = 874.0
+margin_bottom = 41.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 3 )
+custom_styles/hover = SubResource( 4 )
+custom_styles/pressed = SubResource( 5 )
+custom_styles/normal = SubResource( 6 )
+text = "Start New Game"
+
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+margin_top = 61.0
+margin_right = 1024.0
+margin_bottom = 102.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 150
+custom_constants/margin_left = 150
+
+[node name="options" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer2"]
+margin_left = 150.0
+margin_right = 874.0
+margin_bottom = 41.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 3 )
+custom_styles/hover = SubResource( 4 )
+custom_styles/pressed = SubResource( 5 )
+custom_styles/normal = SubResource( 6 )
+text = "OPTIONS"
+
+[node name="MarginContainer3" type="MarginContainer" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+margin_top = 122.0
+margin_right = 1024.0
+margin_bottom = 163.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 150
+custom_constants/margin_left = 150
+
+[node name="about_us" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer3"]
+margin_left = 150.0
+margin_right = 874.0
+margin_bottom = 41.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 3 )
+custom_styles/hover = SubResource( 4 )
+custom_styles/pressed = SubResource( 5 )
+custom_styles/normal = SubResource( 6 )
+text = "ABOUT US"
+
+[node name="MarginContainer4" type="MarginContainer" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+margin_top = 183.0
+margin_right = 1024.0
+margin_bottom = 224.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 150
+custom_constants/margin_left = 150
+
+[node name="exit" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer4"]
+margin_left = 150.0
+margin_right = 874.0
+margin_bottom = 41.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 3 )
+custom_styles/hover = SubResource( 4 )
+custom_styles/pressed = SubResource( 5 )
+custom_styles/normal = SubResource( 6 )
+text = "EXIT"
+
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer/start_new_game" to="." method="_on_start_new_game_mouse_entered"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer/start_new_game" to="." method="_on_start_new_game_pressed"]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer2/options" to="." method="_on_options_mouse_entered"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer2/options" to="." method="_on_options_pressed"]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer3/about_us" to="." method="_on_about_us_mouse_entered"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer3/about_us" to="." method="_on_about_us_pressed"]
+[connection signal="button_down" from="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer4/exit" to="." method="_on_exit_button_down"]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer4/exit" to="." method="_on_exit_mouse_entered"]

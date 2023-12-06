@@ -1,0 +1,68 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Main_menu/about_us/Desain tanpa judul (1).webm" type="VideoStream" id=1]
+[ext_resource path="res://Main_menu/about_us/Desain tanpa judul.webm" type="VideoStream" id=2]
+[ext_resource path="res://Main_menu/about_us/background.jpeg" type="Texture" id=3]
+[ext_resource path="res://Main_menu/about_us/Desain tanpa judul (2).webm" type="VideoStream" id=4]
+[ext_resource path="res://Main_menu/about_us/About_Us.gd" type="Script" id=5]
+[ext_resource path="res://Main_menu/about_us/vina.gd" type="Script" id=6]
+[ext_resource path="res://Main_menu/about_us/tristan.gd" type="Script" id=7]
+[ext_resource path="res://Main_menu/about_us/femi.gd" type="Script" id=8]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 5 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 7
+
+[node name="back" type="Button" parent="TextureRect"]
+margin_left = 304.0
+margin_top = 512.0
+margin_right = 720.0
+margin_bottom = 544.0
+text = "BACK"
+
+[node name="femi" type="VideoPlayer" parent="TextureRect"]
+margin_left = 112.0
+margin_top = 104.0
+margin_right = 352.0
+margin_bottom = 472.0
+stream = ExtResource( 2 )
+autoplay = true
+script = ExtResource( 8 )
+
+[node name="tristan" type="VideoPlayer" parent="TextureRect"]
+margin_left = 392.0
+margin_top = 104.0
+margin_right = 632.0
+margin_bottom = 472.0
+stream = ExtResource( 4 )
+autoplay = true
+script = ExtResource( 7 )
+
+[node name="vina" type="VideoPlayer" parent="TextureRect"]
+margin_left = 672.0
+margin_top = 104.0
+margin_right = 912.0
+margin_bottom = 472.0
+stream = ExtResource( 1 )
+autoplay = true
+script = ExtResource( 6 )
+
+[node name="click" type="AudioStreamPlayer2D" parent="."]
+
+[node name="hover" type="AudioStreamPlayer2D" parent="."]
+pitch_scale = 5000.0
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="mouse_entered" from="TextureRect/back" to="." method="_on_back_mouse_entered"]
+[connection signal="pressed" from="TextureRect/back" to="." method="_on_back_pressed"]
+[connection signal="finished" from="TextureRect/femi" to="TextureRect/femi" method="_on_femi_finished"]
+[connection signal="finished" from="TextureRect/tristan" to="TextureRect/tristan" method="_on_tristan_finished"]
+[connection signal="finished" from="TextureRect/vina" to="TextureRect/vina" method="_on_vina_finished"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

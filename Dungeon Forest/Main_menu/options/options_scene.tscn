@@ -1,0 +1,74 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Main_menu/options/background.png" type="Texture" id=1]
+[ext_resource path="res://Main_menu/options/options_scene.gd" type="Script" id=2]
+[ext_resource path="res://Main_menu/options/Button.gd" type="Script" id=3]
+
+[node name="options_scene" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+self_modulate = Color( 1, 0.992157, 0.435294, 1 )
+margin_right = 1024.0
+margin_bottom = 600.0
+texture = ExtResource( 1 )
+expand = true
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+margin_left = 50.0
+margin_right = 500.0
+margin_bottom = 400.0
+custom_constants/margin_top = 100
+custom_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+margin_top = 100.0
+margin_right = 450.0
+margin_bottom = 350.0
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+margin_right = 450.0
+margin_bottom = 14.0
+text = "SETTING"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+margin_top = 18.0
+margin_right = 450.0
+margin_bottom = 82.0
+
+[node name="margin_slider" type="MarginContainer" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+margin_right = 450.0
+margin_bottom = 16.0
+
+[node name="HSlider" type="HSlider" parent="MarginContainer/VBoxContainer/VBoxContainer/margin_slider"]
+margin_right = 450.0
+margin_bottom = 16.0
+min_value = -30.0
+max_value = 0.0
+
+[node name="margin_button" type="MarginContainer" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+margin_top = 20.0
+margin_right = 450.0
+margin_bottom = 40.0
+
+[node name="mute" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer/margin_button"]
+margin_right = 450.0
+margin_bottom = 20.0
+text = "mute"
+script = ExtResource( 3 )
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+margin_top = 44.0
+margin_right = 450.0
+margin_bottom = 64.0
+
+[node name="back" type="Button" parent="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer"]
+margin_right = 450.0
+margin_bottom = 20.0
+toggle_mode = true
+text = "Back"
+
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/VBoxContainer/margin_slider/HSlider" to="." method="_on_HSlider_value_changed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/margin_button/mute" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/margin_button/mute" to="MarginContainer/VBoxContainer/VBoxContainer/margin_button/mute" method="_on_Button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/MarginContainer/back" to="." method="_on_back_pressed"]

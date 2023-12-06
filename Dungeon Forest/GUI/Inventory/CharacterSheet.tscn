@@ -1,0 +1,95 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/Picture/UI_Different_Free_Wenrexa1/PNG/PanelWindow.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Picture/UI_Different_Free_Wenrexa1/PNG/Window03_Btn.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Picture/UI_Different_Free_Wenrexa1/PNG/Window04.png" type="Texture" id=3]
+[ext_resource path="res://GUI/Inventory/EquipmentSlot.gd" type="Script" id=4]
+
+[sub_resource type="StreamTexture" id=1]
+flags = 4
+load_path = "res://.import/Icons_40.png-5f0719734f3bc911124d638241440700.stex"
+
+[node name="CharacterSheet" type="Control"]
+margin_right = 478.0
+margin_bottom = 569.0
+
+[node name="Background" type="NinePatchRect" parent="."]
+margin_left = 50.0
+margin_top = 50.0
+margin_right = 430.0
+margin_bottom = 540.0
+texture = ExtResource( 1 )
+patch_margin_left = 100
+patch_margin_top = 100
+patch_margin_right = 100
+patch_margin_bottom = 100
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Background"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Middle" type="Control" parent="Background/HBoxContainer"]
+margin_right = 380.0
+margin_bottom = 490.0
+size_flags_horizontal = 3
+
+[node name="NameBackground" type="TextureRect" parent="Background/HBoxContainer/Middle"]
+anchor_right = 1.0
+margin_left = 20.0
+margin_top = 20.0
+margin_right = -20.0
+margin_bottom = 90.0
+rect_min_size = Vector2( 0, 50 )
+texture = ExtResource( 2 )
+expand = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Background/HBoxContainer/Middle/NameBackground"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Name" type="Label" parent="Background/HBoxContainer/Middle/NameBackground/VBoxContainer"]
+margin_right = 340.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 0, 30 )
+text = "Kappa"
+align = 1
+valign = 2
+
+[node name="LevelClass" type="Label" parent="Background/HBoxContainer/Middle/NameBackground/VBoxContainer"]
+margin_top = 34.0
+margin_right = 340.0
+margin_bottom = 70.0
+size_flags_vertical = 3
+text = "Level 1"
+align = 1
+
+[node name="MiddleEquip" type="HBoxContainer" parent="Background/HBoxContainer/Middle"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 130.0
+margin_top = -210.0
+margin_right = 130.0
+margin_bottom = -110.0
+grow_vertical = 0
+
+[node name="Hand" type="TextureRect" parent="Background/HBoxContainer/Middle/MiddleEquip"]
+margin_right = 100.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 100, 100 )
+texture = ExtResource( 3 )
+expand = true
+
+[node name="Icon" type="TextureRect" parent="Background/HBoxContainer/Middle/MiddleEquip/Hand"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -35.0
+margin_top = -35.0
+margin_right = 35.0
+margin_bottom = 35.0
+rect_min_size = Vector2( 70, 70 )
+texture = SubResource( 1 )
+expand = true
+script = ExtResource( 4 )

@@ -1,0 +1,96 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/Picture/UI_Different_Free_Wenrexa1/PNG/PanelWindow.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Picture/UI_Different_Free_Wenrexa1/PNG/Panel1_NoOpacity592x975px.png" type="Texture" id=2]
+[ext_resource path="res://GUI/Inventory/Inventory.gd" type="Script" id=3]
+[ext_resource path="res://Assets/Picture/UI_Different_Free_Wenrexa1/PNG/BtnExitNoOpacity.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Picture/UI_Different_Free_Wenrexa1/PNG/BtnExitOpacity.png" type="Texture" id=5]
+
+[node name="Inventory" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 592.0
+margin_top = 39.0
+margin_right = -52.0
+margin_bottom = -71.0
+script = ExtResource( 3 )
+
+[node name="Background" type="NinePatchRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 1 )
+patch_margin_top = 240
+patch_margin_bottom = 240
+
+[node name="M" type="MarginContainer" parent="Background"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 19
+custom_constants/margin_top = 11
+custom_constants/margin_left = 19
+custom_constants/margin_bottom = 11
+
+[node name="V" type="VBoxContainer" parent="Background/M"]
+margin_left = 19.0
+margin_top = 11.0
+margin_right = 361.0
+margin_bottom = 479.0
+custom_constants/separation = 25
+
+[node name="Header" type="HBoxContainer" parent="Background/M/V"]
+margin_right = 342.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 0, 80 )
+
+[node name="Control" type="Control" parent="Background/M/V/Header"]
+margin_right = 67.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+
+[node name="TitleBackground" type="TextureRect" parent="Background/M/V/Header"]
+margin_left = 71.0
+margin_right = 271.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 200, 0 )
+texture = ExtResource( 2 )
+expand = true
+
+[node name="Label" type="Label" parent="Background/M/V/Header/TitleBackground"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "Inventory"
+align = 1
+valign = 1
+
+[node name="Exit" type="Control" parent="Background/M/V/Header"]
+margin_left = 275.0
+margin_right = 342.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+
+[node name="Button" type="TextureButton" parent="Background/M/V/Header/Exit"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -58.0
+margin_top = 16.0
+margin_right = -8.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 50, 50 )
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 5 )
+expand = true
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Background/M/V"]
+margin_top = 105.0
+margin_right = 342.0
+margin_bottom = 468.0
+size_flags_vertical = 3
+
+[node name="GridContainer" type="GridContainer" parent="Background/M/V/ScrollContainer"]
+margin_right = 342.0
+margin_bottom = 363.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/vseparation = 12
+custom_constants/hseparation = 12
+columns = 4
