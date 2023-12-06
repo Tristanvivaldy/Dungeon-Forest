@@ -1,0 +1,32 @@
+{
+  "10001": {
+    "Name": "Old Sword",
+    "Category": "Weapon",
+    "Type": "Sword",
+    "EquipmentSlot" : "Hand",
+    "Attack": 10,
+    "Range": "10-15",
+    "PotionHealth": null,
+    "Stackable" : false
+  },
+  "10002": {
+    "Name": "Lesser Health Potion",
+    "Category": "Potion",
+    "Type": "HealthPotion",
+    "EquipmentSlot" : null,
+    "Attack": null,
+    "Range": null,
+    "PotionHealth": 25,
+    "Stackable" : true
+  },
+  "10003": {
+    "Name": "Kepala Banteng",
+    "Category": "Weapon",
+    "Type": "Sword",
+    "EquipmentSlot" : "Hand",
+    "Attack": 50,
+    "Range": "50-100",
+    "PotionHealth": null,
+    "Stackable" : false
+  }
+}

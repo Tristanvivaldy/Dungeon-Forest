@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/next-dialogue.wav-f9f257713f2659f2c47a1ca300f88a35.sample"
+
+[deps]
+
+source_file="res://Assets/Sound/next-dialogue.wav"
+dest_files=[ "res://.import/next-dialogue.wav-f9f257713f2659f2c47a1ca300f88a35.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
